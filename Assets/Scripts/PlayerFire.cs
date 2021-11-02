@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////
+//// Name: Sim McQueen & Andrew Dahlman-Oeth
+//// Date: 11/1/21
+//// Proj: ProjectWorlds
+//// Desc: Allows the player to shoot projectiles towards the mouse position
+/////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

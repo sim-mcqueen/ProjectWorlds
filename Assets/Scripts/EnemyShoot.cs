@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////
+//// Name: Andrew Dahlman-Oeth
+//// Date: 11/2/21
+//// Proj: ProjectWorlds
+//// Desc: Enemy shoots bullets at player on an interval
+/////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
