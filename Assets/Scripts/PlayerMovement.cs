@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float MovementSpeed = 1f;
     public float JumpForce = 1f;
 
-
+    private bool gravityDown = true;
     private Rigidbody2D RB;
 
     // Start is called before the first frame update
@@ -41,7 +41,30 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && Mathf.Abs(RB.velocity.y) < 0.001f)
         {
-            RB.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+            if(gravityDown)
+            {
+                RB.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+            }
+            else
+            {
+                RB.AddForce(new Vector2(0, -JumpForce), ForceMode2D.Impulse);
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("GravityLine"))
+        {
+            if (gravityDown)
+            {
+                GetComponent<Rigidbody2D>().gravityScale = -1;
+                gravityDown = false;
+            }
+            else
+            {
+                GetComponent<Rigidbody2D>().gravityScale = 1;
+                gravityDown = true;
+            }
         }
     }
 }
