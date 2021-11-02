@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerFire : MonoBehaviour
 {
     public GameObject bullet;
-    public float bulletSpeed;
     public float projSpeed = 500f;
 
 

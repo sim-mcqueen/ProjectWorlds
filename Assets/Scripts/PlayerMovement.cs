@@ -26,11 +26,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         var movement = Input.GetAxis("Horizontal");
-        if(movement < -0.001f)
+        Vector3 mouse = Input.mousePosition;
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(mouse.x, mouse.y, transform.position.y));
+        Vector2 forward = mouseWorld - transform.position;
+        if (forward.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        else if (movement > 0.001f)
+        else if (forward.x > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
