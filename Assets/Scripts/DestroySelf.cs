@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////
+//// Name: Andrew Dahlman-Oeth
+//// Date: 11/2/21
+//// Proj: ProjectWorlds
+//// Desc: Destroys itself after a given amount of time
+/////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

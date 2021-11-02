@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////
-//// Name: Sim McQueen
+//// Name: Sim McQueen & Andrew Dahlman-Oeth
 //// Date: 11/1/21
 //// Proj: ProjectWorlds
 //// Desc: Allows the player to move and jump
