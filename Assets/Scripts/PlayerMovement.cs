@@ -12,9 +12,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public float MovementSpeed = 1f;
     public float JumpForce = 1f;
+    public float dashModifer;
+
 
     private bool gravityDown = true;
     private Rigidbody2D RB;
+    private bool hasAirDash = true;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(transform.position.y < 0)
+        {
+            gravityDown = true;
+            RB.gravityScale = 1;
+        }
+        else
+        {
+            gravityDown = false;
+            RB.gravityScale = -1;
+        }
+
         var movement = Input.GetAxis("Horizontal");
         Vector3 mouse = Input.mousePosition;
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(mouse.x, mouse.y, transform.position.y));
@@ -37,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
+        RB.velocity = new Vector3(movement * MovementSpeed, RB.velocity.y, 0);
 
         if(Input.GetButtonDown("Jump") && Mathf.Abs(RB.velocity.y) < 0.001f)
         {
@@ -49,9 +63,53 @@ public class PlayerMovement : MonoBehaviour
             {
                 RB.AddForce(new Vector2(0, -JumpForce), ForceMode2D.Impulse);
             }
+            hasAirDash = true;
+        }
+        if(Input.GetButtonDown("Fire2") && !(Mathf.Abs(RB.velocity.y) < 0.001f))
+        {
+            if (hasAirDash)
+            {
+                if (gravityDown)
+                {
+                    if (movement > 0)
+                    {
+                        RB.velocity = new Vector2(0, 0);
+                        RB.AddForce(new Vector2(MovementSpeed * dashModifer, JumpForce), ForceMode2D.Impulse);
+                    }
+                    else if (movement < 0)
+                    {
+                        RB.velocity = new Vector2(0, 0);
+                        RB.AddForce(new Vector2(-MovementSpeed * dashModifer, JumpForce), ForceMode2D.Impulse);
+                    }
+                    else
+                    {
+                        RB.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+                    }
+                }
+                else
+                {
+                    if (movement > 0)
+                    {
+                        RB.velocity = new Vector2(0, 0);
+                        RB.AddForce(new Vector2(MovementSpeed * dashModifer, -JumpForce), ForceMode2D.Impulse);
+                    }
+                    else if (movement < 0)
+                    {
+                        RB.velocity = new Vector2(0, 0);
+                        RB.AddForce(new Vector2(-MovementSpeed * dashModifer, -JumpForce), ForceMode2D.Impulse);
+                    }
+                    else
+                    {
+                        RB.AddForce(new Vector2(0, -JumpForce), ForceMode2D.Impulse);
+                    }
+                }
+                hasAirDash = false;
+            }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("GravityLine"))
         {
@@ -66,5 +124,5 @@ public class PlayerMovement : MonoBehaviour
                 gravityDown = true;
             }
         }
-    }
+    }*/
 }

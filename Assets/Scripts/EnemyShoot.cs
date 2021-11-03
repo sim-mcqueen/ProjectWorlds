@@ -21,18 +21,45 @@ public class EnemyShoot : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ShootAt());
+        if (GetComponent<Renderer>().isVisible)
+        {
+            StartCoroutine(ShootAt());
+        }
+        else
+        {
+            StartCoroutine(NotOnScreen());
+        }
     }
 
     IEnumerator ShootAt()
     {
-        yield return new WaitForSeconds(cooldown);
         projDir = fireTo.transform.position - transform.position;
         GameObject proj = Instantiate(projectile, transform.position, Quaternion.identity);
         proj.GetComponent<SpriteRenderer>().color = projColor;
         Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
         proj.transform.right = fireTo.transform.position - transform.position;
         rb.AddRelativeForce(proj.transform.right * projSpeed);
-        StartCoroutine(ShootAt());
+        yield return new WaitForSeconds(cooldown);
+        if (GetComponent<Renderer>().isVisible)
+        {
+            StartCoroutine(ShootAt());
+        }
+        else
+        {
+            StartCoroutine(NotOnScreen());
+        }
+    }
+
+    IEnumerator NotOnScreen()
+    {
+        yield return new WaitForSeconds(cooldown);
+        if(GetComponent<Renderer>().isVisible)
+        {
+            StartCoroutine(ShootAt());
+        }
+        else
+        {
+            StartCoroutine(NotOnScreen());
+        }
     }
 }
