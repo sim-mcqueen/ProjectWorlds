@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
         if(collision.GetComponent<ProjectileScript>().ID == 2)
         {
             collision.GetComponent<ProjectileScript>().Hit();
+            FindObjectOfType<EndLine>().EnemyKilled();
             Destroy(gameObject);
         }
     }
