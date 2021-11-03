@@ -34,13 +34,8 @@ public class FirePointArc : MonoBehaviour
         Offset.y = Mathf.Sin(arcTan) + InitialOffset;
         if(forward.x < 0 || (forward.x < 0 && forward.y < 0))
         {
-            Debug.Log("one negative");
             Offset.x = -1 * Offset.x;
             Offset.y = -1 * Offset.y;
-        }
-        else
-        {
-            Debug.Log("zero negative");
         }
         // update position
         Vector3 targetPosition = Target.position + Offset;
