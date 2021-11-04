@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2477028010377681972}
   - component: {fileID: -5027884042075207893}
   - component: {fileID: 2969667173821936123}
+  - component: {fileID: 8527197934090775070}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2477028010377681971}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.78, y: 4.34, z: 0}
-  m_LocalScale: {x: 6.19, y: 2.36, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2477028010377681973
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0ccc508108fa6ed4fa11b4a467d7f609, type: 3}
-  m_Color: {r: 1, g: 0.75515175, b: 0.5518868, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 483b86d33ed6db64a864d1396111bb93, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -127,16 +128,34 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.002910614, y: -0.0014555454}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.24998856, y: 0.20633173}
   m_EdgeRadius: 0
+--- !u!114 &8527197934090775070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477028010377681971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d3d61e4f54783448009208546b19b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleFrames:
+  - {fileID: 21300000, guid: 483b86d33ed6db64a864d1396111bb93, type: 3}
+  - {fileID: 21300000, guid: e005efce9721ed944bc55dfb6264cd5e, type: 3}
+  - {fileID: 21300000, guid: 4759055e7f3f7344eaf894e82f17b700, type: 3}
+  - {fileID: 21300000, guid: 947a22c790d8ee0439b120a2e7742192, type: 3}
+  deathFrames: []
