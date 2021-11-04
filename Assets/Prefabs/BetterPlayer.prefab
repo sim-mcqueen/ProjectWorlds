@@ -124,10 +124,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2525032097803523959}
   - component: {fileID: 2525032097803523958}
-  - component: {fileID: 2525032097803523957}
   - component: {fileID: 2525032097803523956}
   - component: {fileID: 2525032097803523963}
   - component: {fileID: 8493351096177433198}
+  - component: {fileID: 1343842219387016213}
   m_Layer: 0
   m_Name: Player (1)
   m_TagString: Player
@@ -201,32 +201,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2525032097803523957
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2525032097803523962}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &2525032097803523956
 Rigidbody2D:
   serializedVersion: 4
@@ -262,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   JumpForce: 10
+  dashModifer: 0
 --- !u!114 &8493351096177433198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +249,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07852f2c9de34b42b81bc4ef58ad79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &1343842219387016213
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2525032097803523962}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.008763164, y: 0.4914751}
+      - {x: -0.44129854, y: 0.46820354}
+      - {x: -0.47482967, y: -0.48063755}
+      - {x: -0.027010903, y: -0.49031925}
+      - {x: 0.47289348, y: -0.47482967}
+      - {x: 0.45841977, y: 0.4584198}
 --- !u!1 &2525032098777788777
 GameObject:
   m_ObjectHideFlags: 0

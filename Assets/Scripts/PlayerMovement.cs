@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float MovementSpeed = 1f;
     public float JumpForce = 1f;
     public float dashModifer;
-
+    public Animator Animat;
 
     private bool gravityDown = true;
     private Rigidbody2D RB;
@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         var movement = Input.GetAxis("Horizontal");
+        Animat.SetFloat("Speed", Mathf.Abs(movement));
         Vector3 mouse = Input.mousePosition;
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(mouse.x, mouse.y, transform.position.y));
         Vector2 forward = mouseWorld - transform.position;

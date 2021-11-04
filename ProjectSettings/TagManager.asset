@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - GravityLine
   - Bullet
+  - RedSlimeEnemy
   layers:
   - Default
   - TransparentFX

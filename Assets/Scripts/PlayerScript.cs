@@ -15,6 +15,11 @@ public class PlayerScript : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if(collision.CompareTag("RedSlimeEnemy"))
+        {
+            Destroy(gameObject);
+        }
         
     }
 }
