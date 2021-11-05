@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////
 //// Name: Sim McQueen
-//// Date: 11/2/21
+//// Date: 11/3/21
 //// Proj: ProjectWorlds
 //// Desc: Makes it so when an Enemy is hit with a bullet, it is killed
 /////////////////////////////////////////////////
@@ -13,11 +13,14 @@ public class EnemyScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<ProjectileScript>().ID == 2)
+        if (collision.CompareTag("Bullet"))
         {
-            collision.GetComponent<ProjectileScript>().Hit();
-            FindObjectOfType<EndLine>().EnemyKilled();
-            Destroy(gameObject);
+            if (collision.GetComponent<ProjectileScript>().ID == 2)
+            {
+                collision.GetComponent<ProjectileScript>().Hit();
+                FindObjectOfType<EndLine>().EnemyKilled();
+                Destroy(gameObject);
+            }
         }
     }
 

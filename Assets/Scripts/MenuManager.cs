@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////
+//// Name: Andrew Dahlman-Oeth
+//// Date: 11/5/21
+//// Proj: ProjectWorlds
+//// Desc: Makes main menu function correctly
+/////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

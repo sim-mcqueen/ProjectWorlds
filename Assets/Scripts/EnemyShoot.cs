@@ -12,7 +12,8 @@ public class EnemyShoot : MonoBehaviour
 {
     public Color projColor;
     public float projSpeed = 200f;
-    public int cooldown = 3;
+    public int cooldownHigh = 3;
+    public int cooldownLow = 1;
     private Vector2 projDir;
     [SerializeField]
     private GameObject fireTo;
@@ -39,7 +40,7 @@ public class EnemyShoot : MonoBehaviour
         Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
         proj.transform.right = fireTo.transform.position - transform.position;
         rb.AddRelativeForce(proj.transform.right * projSpeed);
-        yield return new WaitForSeconds(cooldown);
+        yield return new WaitForSeconds(Random.Range(cooldownLow, cooldownHigh));
         if (GetComponent<Renderer>().isVisible)
         {
             StartCoroutine(ShootAt());
@@ -52,7 +53,7 @@ public class EnemyShoot : MonoBehaviour
 
     IEnumerator NotOnScreen()
     {
-        yield return new WaitForSeconds(cooldown);
+        yield return new WaitForSeconds(Random.Range(cooldownLow, cooldownHigh));
         if(GetComponent<Renderer>().isVisible)
         {
             StartCoroutine(ShootAt());

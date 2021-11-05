@@ -7,7 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
 
@@ -18,13 +18,13 @@ public class PlayerScript : MonoBehaviour
             if (collision.GetComponent<ProjectileScript>().ID == 1)
             {
                 collision.GetComponent<ProjectileScript>().Hit();
-                Destroy(gameObject);
+                SceneManager.LoadScene("Main Menu");
             }
         }
 
         if(collision.CompareTag("RedSlimeEnemy"))
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("Main Menu");
         }
         
     }
