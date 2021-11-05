@@ -287,4 +287,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2703221686137330349, guid: e0a40f16c079173448b401f900daf906, type: 3}
-  projSpeed: 750
+  projSpeed: 500
