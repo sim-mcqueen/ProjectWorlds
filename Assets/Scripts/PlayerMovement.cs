@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y < 0)
+        if(transform.position.y < -8.95f)
         {
             gravityDown = true;
             RB.gravityScale = 1;
