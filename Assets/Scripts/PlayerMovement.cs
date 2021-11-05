@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float JumpForce = 1f;
     public float dashModifer;
     public Animator Animat;
-
+    public float plrScale;
     private bool gravityDown = true;
     private Rigidbody2D RB;
     private bool hasAirDash = true;
@@ -46,11 +46,11 @@ public class PlayerMovement : MonoBehaviour
         Vector2 forward = mouseWorld - transform.position;
         if (forward.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-plrScale, plrScale, 1);
         }
         else if (forward.x > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(plrScale, plrScale, 1);
         }
         RB.velocity = new Vector3(movement * MovementSpeed, RB.velocity.y, 0);
 
