@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoundryCam : MonoBehaviour
+public class BoundaryCam : MonoBehaviour
 {
     public float leftBoundry;
     public float rightBoundry;
