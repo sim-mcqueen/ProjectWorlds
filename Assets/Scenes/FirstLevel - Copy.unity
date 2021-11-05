@@ -448,6 +448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2477028010377681972, guid: 5f331eb23d3c32445b6b919a6340e1fc, type: 3}
+      propertyPath: fireTo
+      value: 
+      objectReference: {fileID: 1791361307}
     - target: {fileID: 2477028010377681974, guid: 5f331eb23d3c32445b6b919a6340e1fc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -616,6 +620,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1791361307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2525032097803523962, guid: 3c029664315cd894e9fbbd7edb6cb23c, type: 3}
+  m_PrefabInstance: {fileID: 484559008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1802862917
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,8 +784,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftBoundry: 0
   rightBoundry: 33.8
-  Target: {fileID: 0}
-  camTransform: {fileID: 0}
+  Target: {fileID: 868925418}
+  camTransform: {fileID: 1919599164}
   Offset: {x: 0, y: 0, z: 0}
 --- !u!1 &2058918268
 GameObject:
