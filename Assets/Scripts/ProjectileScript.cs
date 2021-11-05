@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////
+//// Name: Sim McQueen
+//// Date: 11/2/21
+//// Proj: ProjectWorlds
+//// Desc: Gives the bullet an ID, which allows other Scripts to see who shot it
+/////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

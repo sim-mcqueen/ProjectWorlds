@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////
+//// Name: Sim McQueen
+//// Date: 11/2/21
+//// Proj: ProjectWorlds
+//// Desc: Once given some frames of an Animation, it will cycle through those frames based on the delay
+/////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

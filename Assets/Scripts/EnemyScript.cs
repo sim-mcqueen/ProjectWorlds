@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////
+//// Name: Sim McQueen
+//// Date: 11/2/21
+//// Proj: ProjectWorlds
+//// Desc: Makes it so when an Enemy is hit with a bullet, it is killed
+/////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

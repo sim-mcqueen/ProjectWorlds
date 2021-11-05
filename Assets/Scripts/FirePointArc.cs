@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////
+//// Name: Sim McQueen
+//// Date: 11/2/21
+//// Proj: ProjectWorlds
+//// Desc: When attached to the firepoint, it will rotate the fire point around the player depending on where the mouse is
+/////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

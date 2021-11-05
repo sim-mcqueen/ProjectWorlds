@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////
+//// Name: Sim McQueen
+//// Date: 11/2/21
+//// Proj: ProjectWorlds
+//// Desc: When attached to the player, the player will die when hit with an enemy bullet or a red slime
+/////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
