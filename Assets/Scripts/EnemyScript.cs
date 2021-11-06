@@ -10,6 +10,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    public GameObject deathPS;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +20,7 @@ public class EnemyScript : MonoBehaviour
             {
                 collision.GetComponent<ProjectileScript>().Hit();
                 FindObjectOfType<EndLine>().EnemyKilled();
+                Instantiate(deathPS, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
