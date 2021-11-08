@@ -102,7 +102,7 @@ MonoBehaviour:
   projSpeed: 250
   cooldownHigh: 3
   cooldownLow: 1
-  fireTo: {fileID: 0}
+  target: {fileID: 2404396591201722832, guid: 3c029664315cd894e9fbbd7edb6cb23c, type: 3}
   projectile: {fileID: 2703221686137330349, guid: e0a40f16c079173448b401f900daf906, type: 3}
 --- !u!114 &-5027884042075207893
 MonoBehaviour:
