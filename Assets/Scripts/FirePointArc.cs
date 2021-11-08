@@ -34,7 +34,7 @@ public class FirePointArc : MonoBehaviour
     {
         Vector3 mouse = Input.mousePosition;
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(mouse.x, mouse.y, transform.position.y));
-        Vector2 forward = mouseWorld - transform.position;
+        Vector2 forward = mouseWorld - Target.position;
         float arcTan = Mathf.Atan(forward.y / forward.x);
         Offset.x = Mathf.Cos(arcTan) + InitialOffset;
         Offset.y = Mathf.Sin(arcTan) + InitialOffset;
@@ -42,13 +42,21 @@ public class FirePointArc : MonoBehaviour
         {
             Offset.x = -1 * Offset.x;
             Offset.y = -1 * Offset.y;
+            var rotationVector = transform.rotation.eulerAngles;
+            Debug.Log((arcTan * 180) / Mathf.PI);
+            rotationVector.z = (-arcTan * 180) / Mathf.PI;
+            camTransform.rotation = Quaternion.Euler(0, 180, rotationVector.z);
+        }
+        else
+        {
+            var rotationVector = transform.rotation.eulerAngles;
+            rotationVector.z = (arcTan * 180) / Mathf.PI;
+            camTransform.rotation = Quaternion.Euler(0, 0, rotationVector.z);
         }
         // update position
         Vector3 targetPosition = Target.position + Offset;
         camTransform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, 0);
         // update rotation of weapon
-        var rotationVector = transform.rotation.eulerAngles;
-        rotationVector.z = (arcTan * 180) / Mathf.PI;
-        camTransform.rotation = Quaternion.Euler(rotationVector);
+        
     }
 }
