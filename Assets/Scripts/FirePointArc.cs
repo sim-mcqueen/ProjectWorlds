@@ -43,7 +43,6 @@ public class FirePointArc : MonoBehaviour
             Offset.x = -1 * Offset.x;
             Offset.y = -1 * Offset.y;
             var rotationVector = transform.rotation.eulerAngles;
-            Debug.Log((arcTan * 180) / Mathf.PI);
             rotationVector.z = (-arcTan * 180) / Mathf.PI;
             camTransform.rotation = Quaternion.Euler(0, 180, rotationVector.z);
         }
