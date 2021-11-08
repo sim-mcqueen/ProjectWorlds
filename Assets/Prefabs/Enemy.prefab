@@ -100,7 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projColor: {r: 0.8705883, g: 0.6509804, b: 1, a: 1}
   projSpeed: 250
-  cooldown: 3
+  cooldownHigh: 3
+  cooldownLow: 1
   fireTo: {fileID: 0}
   projectile: {fileID: 2703221686137330349, guid: e0a40f16c079173448b401f900daf906, type: 3}
 --- !u!114 &-5027884042075207893
@@ -115,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bb3ba5f9356194a94ba21fccbf413e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathPS: {fileID: 304402337223107046, guid: 9667eb8042677ae43bf9b4c2dde7b92d, type: 3}
 --- !u!61 &2969667173821936123
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 mouse = Input.mousePosition;
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(mouse.x, mouse.y, transform.position.y));
         Vector2 forward = mouseWorld - transform.position;
+
         if (forward.x < 0)
         {
             transform.localScale = new Vector3(-plrScale, plrScale, 1);
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(plrScale, plrScale, 1);
         }
+
         RB.velocity = new Vector3(movement * MovementSpeed, RB.velocity.y, 0);
 
         if(Input.GetButtonDown("Jump") && Mathf.Abs(RB.velocity.y) < 0.001f)
