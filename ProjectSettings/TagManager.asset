@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - RedSlimeEnemy
   - Music
+  - Ground
   layers:
   - Default
   - TransparentFX
