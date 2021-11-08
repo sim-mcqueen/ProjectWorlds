@@ -19,6 +19,7 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         optionsMenu.SetActive(false);
+            mainMenu.SetActive(true);
     }
 
     public void OpenOptions()
