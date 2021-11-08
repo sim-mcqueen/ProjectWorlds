@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2703221686137330349, guid: e0a40f16c079173448b401f900daf906, type: 3}
   projSpeed: 1000
+  shootSound: {fileID: 2328571671289777998, guid: b1aa26517fd1fc14593b110e1376c2f1, type: 3}
 --- !u!114 &2525032098777788776
 MonoBehaviour:
   m_ObjectHideFlags: 0

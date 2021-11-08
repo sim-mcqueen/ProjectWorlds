@@ -11,6 +11,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public GameObject deathPS;
+    public GameObject deathSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +22,7 @@ public class EnemyScript : MonoBehaviour
                 collision.GetComponent<ProjectileScript>().Hit();
                 FindObjectOfType<EndLine>().EnemyKilled();
                 Instantiate(deathPS, transform.position, Quaternion.identity);
+                Instantiate(deathSound, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }

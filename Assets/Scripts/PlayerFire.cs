@@ -12,12 +12,13 @@ public class PlayerFire : MonoBehaviour
 {
     public GameObject bullet;
     public float projSpeed = 500f;
-
+    public GameObject shootSound;
 
     private void Update()
     {
         if(Input.GetButtonDown("Fire1"))
         {
+            Instantiate(shootSound, transform.position, Quaternion.identity);
             Vector3 mouse = Input.mousePosition;
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(mouse.x, mouse.y, transform.position.y));
             Vector2 forward = mouseWorld - transform.position;
