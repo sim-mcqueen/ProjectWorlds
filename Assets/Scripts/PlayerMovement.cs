@@ -32,11 +32,13 @@ public class PlayerMovement : MonoBehaviour
         {
             gravityDown = true;
             RB.gravityScale = 1;
+            transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
         }
         else
         {
             gravityDown = false;
             RB.gravityScale = -1;
+            transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
         }
 
         var movement = Input.GetAxis("Horizontal");
@@ -47,11 +49,25 @@ public class PlayerMovement : MonoBehaviour
 
         if (forward.x < 0)
         {
-            transform.localScale = new Vector3(-plrScale, plrScale, 1);
+            if(gravityDown)
+            {
+                transform.localScale = new Vector3(-plrScale, plrScale, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(-plrScale, -plrScale, 1);
+            }
         }
         else if (forward.x > 0)
         {
-            transform.localScale = new Vector3(plrScale, plrScale, 1);
+            if(gravityDown)
+            {
+                transform.localScale = new Vector3(plrScale, plrScale, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(plrScale, -plrScale, 1);
+            }
         }
 
         RB.velocity = new Vector3(movement * MovementSpeed, RB.velocity.y, 0);

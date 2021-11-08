@@ -46,6 +46,9 @@ public class FirePointArc : MonoBehaviour
         // update position
         Vector3 targetPosition = Target.position + Offset;
         camTransform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, 0);
-        // player fire
+        // update rotation of weapon
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.z = (arcTan * 180) / Mathf.PI;
+        camTransform.rotation = Quaternion.Euler(rotationVector);
     }
 }
