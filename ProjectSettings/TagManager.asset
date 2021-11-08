@@ -8,6 +8,7 @@ TagManager:
   - GravityLine
   - Bullet
   - RedSlimeEnemy
+  - Music
   layers:
   - Default
   - TransparentFX
