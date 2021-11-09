@@ -149,3 +149,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathPS: {fileID: 2214198709540333476, guid: 3643244c4c271724a89c700603fed92e, type: 3}
+  deathSound: {fileID: 3501401636408944445, guid: ef9feab36e813df48a035c5d7f4d1cd6, type: 3}

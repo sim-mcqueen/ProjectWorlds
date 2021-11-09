@@ -8090,7 +8090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftBoundry: 0
-  rightBoundry: 33.8
+  rightBoundry: 44
   Target: {fileID: 868925418}
   camTransform: {fileID: 1919599164}
   Offset: {x: 0, y: 0, z: 0}

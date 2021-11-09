@@ -102,7 +102,7 @@ MonoBehaviour:
   projSpeed: 250
   cooldownHigh: 3
   cooldownLow: 1
-  target: {fileID: 2404396591201722832, guid: 3c029664315cd894e9fbbd7edb6cb23c, type: 3}
+  fireTo: {fileID: 0}
   projectile: {fileID: 2703221686137330349, guid: e0a40f16c079173448b401f900daf906, type: 3}
 --- !u!114 &-5027884042075207893
 MonoBehaviour:
@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathPS: {fileID: 304402337223107046, guid: 9667eb8042677ae43bf9b4c2dde7b92d, type: 3}
+  deathSound: {fileID: 3501401636408944445, guid: ef9feab36e813df48a035c5d7f4d1cd6, type: 3}
 --- !u!61 &2969667173821936123
 BoxCollider2D:
   m_ObjectHideFlags: 0
