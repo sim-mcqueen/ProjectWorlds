@@ -36,7 +36,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("FirstLevel");
+        SceneManager.LoadScene("ThirdLevel");
     }
 
     public void QuitGame()

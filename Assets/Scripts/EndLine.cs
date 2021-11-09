@@ -42,6 +42,7 @@ public class EndLine : MonoBehaviour
         {
             if(readyToGo)
             {
+                FindObjectOfType<TimerScript>().timeStop();
                 SceneManager.LoadScene(NextLevel);
             }
         }

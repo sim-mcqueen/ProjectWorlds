@@ -18,12 +18,14 @@ public class PlayerScript : MonoBehaviour
             if (collision.GetComponent<ProjectileScript>().ID == 1)
             {
                 collision.GetComponent<ProjectileScript>().Hit();
+                FindObjectOfType<GameManager>().resetTime();
                 SceneManager.LoadScene("Main Menu");
             }
         }
 
         if(collision.CompareTag("RedSlimeEnemy"))
         {
+            FindObjectOfType<GameManager>().resetTime();
             SceneManager.LoadScene("Main Menu");
         }
         
