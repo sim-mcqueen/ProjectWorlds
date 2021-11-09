@@ -23,6 +23,9 @@ public class PlayerFire : MonoBehaviour
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(mouse.x, mouse.y, transform.position.y));
             Vector2 forward = mouseWorld - transform.position;
             GameObject proj = Instantiate(bullet, transform.position, Quaternion.identity);
+            Vector3 projTransform = proj.transform.position;
+            projTransform.z = 5;
+            proj.transform.position = projTransform;
             Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
             ProjectileScript ps = proj.GetComponent<ProjectileScript>();
             ps.ID = 2;

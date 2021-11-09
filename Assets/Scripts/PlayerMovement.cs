@@ -15,10 +15,16 @@ public class PlayerMovement : MonoBehaviour
     public float dashModifer;
     public Animator Animat;
     public float plrScale;
+    public bool onGround = true;
     private bool gravityDown = true;
     private Rigidbody2D RB;
     private bool hasAirDash = true;
 
+
+    public void setGround(bool status)
+    {
+        onGround = status;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
         RB.velocity = new Vector3(movement * MovementSpeed, RB.velocity.y, 0);
 
-        if(Input.GetButtonDown("Jump") && Mathf.Abs(RB.velocity.y) < 0.001f)
+        if(Input.GetButtonDown("Jump") && onGround)
         {
             if(gravityDown)
             {
@@ -84,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
             }
             hasAirDash = true;
         }
-        if(Input.GetButtonDown("Fire2") && !(Mathf.Abs(RB.velocity.y) < 0.001f))
+        if(Input.GetButtonDown("Fire2") && hasAirDash)
         {
             if (hasAirDash)
             {
