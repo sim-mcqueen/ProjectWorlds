@@ -19,14 +19,16 @@ public class PlayerScript : MonoBehaviour
             {
                 collision.GetComponent<ProjectileScript>().Hit();
                 FindObjectOfType<GameManager>().resetTime();
-                SceneManager.LoadScene("Main Menu");
+                Scene scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(scene.name);
             }
         }
 
         if(collision.CompareTag("RedSlimeEnemy"))
         {
             FindObjectOfType<GameManager>().resetTime();
-            SceneManager.LoadScene("Main Menu");
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
         }
         
     }
